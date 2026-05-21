@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifa iPhone 16 Pro Max</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>🎟️ RIFA IPHONE 16 PRO MAX</h1>
+        <p class="subtitle">Participa y gana increíble premio</p>
+    </header>
+
+    <section class="card-premio">
+        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=1200&auto=format&fit=crop" alt="Premio Rifa">
+
+        <div class="info-rifa">
+            <div class="info-item">
+                <span>📅 Fecha Sorteo:</span>
+                <strong>30 Junio 2026</strong>
+            </div>
+
+            <div class="info-item">
+                <span>💰 Precio Boleto:</span>
+                <strong>$100 MXN</strong>
+            </div>
+
+            <div class="info-item">
+                <span>🎟️ Disponibles:</span>
+                <strong id="boletosDisponibles">100</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="boletos-section">
+        <h2>Selecciona tu boleto</h2>
+
+        <div id="boletosContainer" class="boletos-grid"></div>
+    </section>
+
+    <section class="formulario-section">
+        <h2>Reservar boleto</h2>
+
+        <form id="formReserva">
+
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" id="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label>Celular</label>
+                <input type="tel" id="telefono" required>
+            </div>
+
+            <div class="form-group">
+                <label>Boleto Seleccionado</label>
+                <input type="text" id="boletoSeleccionado" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Comprobante de Pago</label>
+                <input type="file" id="comprobante">
+            </div>
+
+            <button type="submit" class="btn-reservar">
+                Reservar Boleto
+            </button>
+
+        </form>
+    </section>
+
+    <section class="mensaje-section">
+        <div id="mensaje"></div>
+    </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

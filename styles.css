@@ -1,0 +1,71 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #38bdf8;
+    }
+
+.subtitle {
+    color: #cbd5e1;
+}
+
+.card-premio {
+    background: #1e293b;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+    .card-premio img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+.info-rifa {
+    padding: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.boletos-section,
+.formulario-section {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+    .boletos-section h2,
+    .formulario-section h2 {
+        margin-bottom: 20px;
+        color: #38bdf8;
+    }
+
+.boletos-grid {
+    display: grid;
+}
