@@ -1,5 +1,13 @@
-// JavaScript source code
-const boletosContainer = document.getElementById('boletosContainer');
+﻿const boletosContainer = document.getElementById('boletosContainer');
+const boletoSeleccionado = document.getElementById('boletoSeleccionado');
+const formReserva = document.getElementById('formReserva');
+const mensaje = document.getElementById('mensaje');
+const boletosDisponibles = document.getElementById('boletosDisponibles');
+
+const TOTAL_BOLETOS = 100;
+
+const API_URL = 'https://script.google.com/macros/s/AKfycbxwP4iKz44MuArax5TC9ma4sZ4A5rH7j7udfeSYovqkykEmDhTX0NJmKXkPZkcje7PVaw/exec';
+let boletoActual = null;
 
 function generarBoletos() {
 
@@ -56,16 +64,26 @@ formReserva.addEventListener('submit', function (e) {
     const telefono = document.getElementById('telefono').value;
 
     if (!boletoActual) {
-        mensaje.innerHTML = '?? Debes seleccionar un boleto';
+        mensaje.innerHTML = '⚠️ Debes seleccionar un boleto';
         return;
     }
 
-    boletosOcupados.push(boletoActual);
+    await fetch(API_URL, {
+
+        method: 'POST',
+
+        body: JSON.stringify({
+            boleto: boletoActual,
+            nombre: nombre,
+            telefono: telefono
+        })
+
+    });
 
     generarBoletos();
 
     mensaje.innerHTML = `
-        ? Boleto #${boletoActual} reservado correctamente para ${nombre}.<br><br>
+        ✅ Boleto #${boletoActual} reservado correctamente para ${nombre}.<br><br>
         En breve validaremos tu comprobante de pago.
     `;
 
@@ -76,4 +94,24 @@ formReserva.addEventListener('submit', function (e) {
     boletoActual = null;
 });
 
-generarBoletos();
+async function cargarBoletos() {
+
+    try {
+
+        const response = await fetch(API_URL);
+
+        const data = await response.json();
+
+        boletosOcupados = data.map(item => Number(item.boleto));
+
+        generarBoletos();
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+
+cargarBoletos();
