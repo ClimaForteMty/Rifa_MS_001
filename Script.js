@@ -11,6 +11,8 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbxrStUpgUiz6oeP9Brncj9x
 
 function generarBoletos() {
 
+    console.log('Generando boletos...');
+
     boletosContainer.innerHTML = '';
 
     for (let i = 1; i <= TOTAL_BOLETOS; i++) {
@@ -122,4 +124,7 @@ async function cargarBoletos() {
 
 }
 
+generarBoletos();
+
 cargarBoletos();
+
