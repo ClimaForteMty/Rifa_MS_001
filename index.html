@@ -9,73 +9,75 @@
 </head>
 <body>
 
-    <header class="header">
-        <h1>🎟️ RIFA MINISPLIT PRIME - 1 TONELADA - FRIO/CALOR</h1>
-        <p class="subtitle">Participa y gana increíble premio</p>
-    </header>
+    <div class="container">
+        <header class="header">
+            <h1>🎟️ RIFA MINISPLIT PRIME - 1 TONELADA - FRIO/CALOR</h1>
+            <p class="subtitle">Participa y gana increíble premio</p>
+        </header>
 
-    <section class="card-premio">
-        <img src="FotoClimaPrimeRifa.PNG" alt="Premio Rifa">
+        <section class="card-premio">
+            <img src="FotoClimaPrimeRifa.PNG" alt="Premio Rifa">
 
-        <div class="info-rifa">
-            <div class="info-item">
-                <span>📅 Fecha Sorteo:<strong> 30 Junio 2026</strong></span>               
+            <div class="info-rifa">
+                <div class="info-item">
+                    <span>📅 Fecha Sorteo:<strong> 30 Junio 2026</strong></span>
+                </div>
+
+                <div class="info-item">
+                    <span>💰 Precio Boleto:<strong> $100 MXN</strong></span>
+                </div>
+
+                <div class="info-item">
+                    <span>🎟️ Disponibles: <strong id="boletosDisponibles">100</strong></span>
+                </div>
             </div>
+        </section>
 
-            <div class="info-item">
-                <span>💰 Precio Boleto:<strong> $100 MXN</strong></span>                
-            </div>
+        <section class="boletos-section">
+            <h2>Selecciona tu boleto</h2>
 
-            <div class="info-item">
-                <span>🎟️ Disponibles: <strong id="boletosDisponibles">100</strong></span>               
-            </div>
-        </div>
-    </section>
+            <div id="boletosContainer" class="boletos-grid"></div>
+        </section>
 
-    <section class="boletos-section">
-        <h2>Selecciona tu boleto</h2>
+        <section class="formulario-section">
+            <h2>Reservar boleto</h2>
 
-        <div id="boletosContainer" class="boletos-grid"></div>
-    </section>
+            <form id="formReserva">
 
-    <section class="formulario-section">
-        <h2>Reservar boleto</h2>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre" required>
+                </div>
 
-        <form id="formReserva">
+                <div class="form-group">
+                    <label>Celular</label>
+                    <input type="tel" id="telefono" required>
+                </div>
 
-            <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" id="nombre" required>
-            </div>
+                <div class="form-group">
+                    <label>Boleto Seleccionado</label>
+                    <input type="text" id="boletoSeleccionado" readonly>
+                </div>
 
-            <div class="form-group">
-                <label>Celular</label>
-                <input type="tel" id="telefono" required>
-            </div>
+                <div class="form-group">
+                    <label>Comprobante de Pago</label>
+                    <input type="file" id="comprobante">
+                </div>
 
-            <div class="form-group">
-                <label>Boleto Seleccionado</label>
-                <input type="text" id="boletoSeleccionado" readonly>
-            </div>
+                <button type="submit" class="btn-reservar">
+                    Reservar Boleto
+                </button>
 
-            <div class="form-group">
-                <label>Comprobante de Pago</label>
-                <input type="file" id="comprobante">
-            </div>
+            </form>
+        </section>
 
-            <button type="submit" class="btn-reservar">
-                Reservar Boleto
-            </button>
-
-        </form>
-    </section>
-
-    <section class="mensaje-section">
-        <div id="mensaje"></div>
-    </section>
+        <section class="mensaje-section">
+            <div id="mensaje"></div>
+        </section>
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="Script.js"></script>
+
 </body>
 </html>
