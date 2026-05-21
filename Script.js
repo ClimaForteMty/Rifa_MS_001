@@ -8,6 +8,7 @@ const TOTAL_BOLETOS = 100;
 
 const API_URL = 'https://script.google.com/macros/s/AKfycbxwP4iKz44MuArax5TC9ma4sZ4A5rH7j7udfeSYovqkykEmDhTX0NJmKXkPZkcje7PVaw/exec';
 let boletoActual = null;
+let boletosOcupados = [];
 
 function generarBoletos() {
 
@@ -96,19 +97,27 @@ formReserva.addEventListener('submit', function (e) {
 
 async function cargarBoletos() {
 
-    try {
+    async function cargarBoletos() {
 
-        const response = await fetch(API_URL);
+        try {
 
-        const data = await response.json();
+            const response = await fetch(API_URL);
 
-        boletosOcupados = data.map(item => Number(item.boleto));
+            const data = await response.json();
 
-        generarBoletos();
+            boletosOcupados = data.map(item => Number(item.boleto));
 
-    } catch (error) {
+            generarBoletos();
 
-        console.error(error);
+        } catch (error) {
+
+            console.error('Error cargando boletos:', error);
+
+            boletosOcupados = [];
+
+            generarBoletos();
+
+        }
 
     }
 
