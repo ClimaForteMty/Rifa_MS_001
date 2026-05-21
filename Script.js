@@ -3,12 +3,11 @@ const boletoSeleccionado = document.getElementById('boletoSeleccionado');
 const formReserva = document.getElementById('formReserva');
 const mensaje = document.getElementById('mensaje');
 const boletosDisponibles = document.getElementById('boletosDisponibles');
-
 const TOTAL_BOLETOS = 100;
-
-const API_URL = 'https://script.google.com/macros/s/AKfycbxwP4iKz44MuArax5TC9ma4sZ4A5rH7j7udfeSYovqkykEmDhTX0NJmKXkPZkcje7PVaw/exec';
 let boletoActual = null;
 let boletosOcupados = [];
+const API_URL = 'https://script.google.com/macros/s/AKfycbxrStUpgUiz6oeP9Brncj9xfEb1JlG1dXvMGwK4fSXrqasOXMigHr-ng9qVuUWhCoSMEg/exec'
+
 
 function generarBoletos() {
 
