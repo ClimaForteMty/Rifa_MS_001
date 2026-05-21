@@ -1,4 +1,5 @@
-﻿const boletosContainer = document.getElementById('boletosContainer');
+﻿const API_URL = 'https://script.google.com/macros/s/AKfycbxrStUpgUiz6oeP9Brncj9xfEb1JlG1dXvMGwK4fSXrqasOXMigHr-ng9qVuUWhCoSMEg/exec'
+const boletosContainer = document.getElementById('boletosContainer');
 const boletoSeleccionado = document.getElementById('boletoSeleccionado');
 const formReserva = document.getElementById('formReserva');
 const mensaje = document.getElementById('mensaje');
@@ -6,8 +7,6 @@ const boletosDisponibles = document.getElementById('boletosDisponibles');
 const TOTAL_BOLETOS = 100;
 let boletoActual = null;
 let boletosOcupados = [];
-const API_URL = 'https://script.google.com/macros/s/AKfycbxrStUpgUiz6oeP9Brncj9xfEb1JlG1dXvMGwK4fSXrqasOXMigHr-ng9qVuUWhCoSMEg/exec'
-
 
 function generarBoletos() {
 
